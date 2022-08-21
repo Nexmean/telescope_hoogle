@@ -17,8 +17,8 @@ local function prompt_to_hoogle_cmd(opts)
     -- TODO results showing up twice when typing quickly?
     local count = opts.count or 50
     return {
-      command = 'hoogle',
-      args = vim.tbl_flatten { '--json', '--count=' .. count, prompt }
+      command = 'cabal-hoogle',
+      args = vim.tbl_flatten {'run', '--', '--json', '--count=' .. count, prompt }
     }
   end
 
